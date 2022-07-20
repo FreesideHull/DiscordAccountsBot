@@ -15,6 +15,7 @@ server.user(
     name="Validate user", # or create them if they somehow don't exust
     user=username,
     home="/home/"+username,
+    _sudo=True,
 )
 
 files.directory(
