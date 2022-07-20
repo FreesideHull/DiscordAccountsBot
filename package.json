@@ -19,6 +19,7 @@
   "dependencies": {
     "applause-cli": "^1.8.1",
     "powahroot": "^1.2.6",
+    "pretty-ms": "^8.0.0",
     "tweetnacl": "^1.0.3"
   }
 }

@@ -2,7 +2,7 @@
 
 import pretty_ms from 'pretty-ms';
 
-import log from '../../../../io/NamespacedLog.mjs'; const l = log("http:request");
+import log from '../../io/NamespacedLog.mjs'; const l = log("http:request");
 
 async function middleware_log_request(ctx, next) {
 	let start = new Date();

@@ -2,7 +2,7 @@
 
 import pretty_ms from 'pretty-ms';
 
-import log from '../../../../io/NamespacedLog.mjs'; const l = log("http:request");
+import log from '../../io/NamespacedLog.mjs'; const l = log("http:request");
 
 /**
  * Handles errors thrown by handlers further down the chain. 

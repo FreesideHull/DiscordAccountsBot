@@ -2,6 +2,8 @@
 
 import ServerRouter from 'powahroot/Server.mjs';
 
+import settings from '../../settings.mjs';
+
 import middleware_log from './routes/middleware_log.mjs';
 import middleware_catch_errors from './routes/middleware_errors.mjs';
 
@@ -12,7 +14,7 @@ import middleware_catch_errors from './routes/middleware_errors.mjs';
 export default function() {
 	const router = new ServerRouter();
 	
-	router.on_all(middleware_catch_errors.bind(this, sys.config.verbose));
+	router.on_all(middleware_catch_errors.bind(this, settings.cli.verbose));
 	router.on_all(middleware_log);
 	
 	// TODO: add routes here
