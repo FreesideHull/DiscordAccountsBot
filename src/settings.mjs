@@ -5,5 +5,5 @@ const settings = {
 
 };
 
-
+// If this file is imported multiple times, the same instance of the above object is always returned
 export default settings;
