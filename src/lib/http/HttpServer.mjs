@@ -14,8 +14,7 @@ import log from '../io/NamespacedLog.mjs'; const l = log("http");
  * ...but currently it does nothing.
  */
 class HttpServer {
-	constructor(port) {
-		this.port = port;
+	constructor() {
 		this.router = make_router();
 	}
 	
