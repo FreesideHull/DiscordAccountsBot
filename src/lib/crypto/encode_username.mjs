@@ -13,6 +13,7 @@ export default function(key, username) {
 	
 	return encrypt(key, JSON.stringify({
 		type: "username",
-		username
+		username,
+		now: (new Date()).toISOString()
 	})).replace(/\+/g, "-").replace(/\//g, "_");
 };
