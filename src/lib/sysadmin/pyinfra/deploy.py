@@ -9,19 +9,21 @@
 
 from pyinfra.operations import server, files
 
-username = "test"
+username = "test" # replace this with however we get the username var!
 
 server.user(
-    name="Validate user", # or create them if they somehow don't exust
+    name="Validate user", # or create them if they somehow don't exist
     user=username,
     home="/home/"+username,
     _sudo=True,
 )
 
 files.directory(
-    name="Ensure /home/username exists",
+    name="Ensure /home/username exists", # create the folder, if its a new user it is unlikely to exist
     path="/home/"+username,
     user=username,
     group=username,
     _sudo=True,
 )
+
+# sudo is needed for both commands, please use the sudo passwoed of the account you are connecting as
