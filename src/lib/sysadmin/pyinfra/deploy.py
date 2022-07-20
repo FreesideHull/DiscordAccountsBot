@@ -22,4 +22,5 @@ files.directory(
     path="/home/"+username,
     user=username,
     group=username,
+    _sudo=True,
 )
