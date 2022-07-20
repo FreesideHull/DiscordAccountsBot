@@ -13,6 +13,7 @@ This Discord bot manages accounts on the Freeside network, but may be useful in 
 ## System Requirements
  - A *recent* version of Node.js
  - Python 3 + pip
+ - [`pipx`](https://pypi.org/project/pipx/)
  - Linux (Windows may work but is untested)
 
 
