@@ -16,11 +16,10 @@ server.user(
     user=username,
     home="/home/"+username,
 )
-files.file(
-    name="Create pyinfra log file",
-    path="/home/"+username"/",
-    user=useraname,
+
+files.directory(
+    name="Ensure /home/username exists",
+    path="/home/"+username,
+    user=username,
     group=username,
-    # add `chown` command equivalent here
-    _sudo=True,
 )
