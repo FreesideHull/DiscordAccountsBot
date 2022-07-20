@@ -20,6 +20,10 @@ This Discord bot manages accounts on the Freeside network, but may be useful in 
 TODO: Write getting started instructions here.
 
 
+## Documentation
+Usage and development documentation can be found in the `docs/` directory: [DiscordAccountsBot documentation](docs/)
+
+
 ## Contributing
 Contributions are very welcome - both issues and pull requests! Please mention in your pull request that you release your work under the Apache 2 licence (see below).
 
