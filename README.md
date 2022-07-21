@@ -20,6 +20,12 @@ This Discord bot manages accounts on the Freeside network, but may be useful in 
 ## Getting Started
 TODO: Write getting started instructions here.
 
+### pyinfra
+
+To install [pyinfra](https://pyinfra.com/): `pipx install pyinfra`
+
+For a more detailed explanation of the **contents** of the config, please see the [pyinfra docs page](docs/sysadmin/pyinfra.md)
+
 
 ## Documentation
 Usage and development documentation can be found in the `docs/` directory: [DiscordAccountsBot documentation](docs/)
