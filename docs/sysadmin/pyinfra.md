@@ -38,5 +38,5 @@ To run through the full `cookbook` (yes crimsontome just came up with that name)
 pyinfra inventory.py deploy.py
 ```
 
-With any luck (**Please ensure you have a working SSH config, with a keypair added to `fs-storage`! Otherwise it is likely to fail, or at least be slower**)
+With any luck (**Please ensure you have a working SSH config, with a keypair added to `fs-storage`! Otherwise it is likely to fail, or at least be slower**) the commands will have ran and properly.
 
