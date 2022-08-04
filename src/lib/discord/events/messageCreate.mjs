@@ -1,7 +1,7 @@
 "use strict";
 
 // Unused? --@sbrl
-//import discord from 'discord.js';
+// import discord from 'discord.js';
 
 export default function(client) {
 	client.on("messageCreate", async (message) => {
@@ -18,6 +18,8 @@ export default function(client) {
 			.split(/ +/g);
 	
 		const command = client.commands.get(cmd.toLowerCase()) || client.commands.find(c => c.aliases?.includes(cmd.toLowerCase()));
+		console.log(`DEBUG command`, command);
+		console.log(`DEBUG commands`, client.commands);
 	
 		if (!command) return;
 		await command.run(client, message, args);

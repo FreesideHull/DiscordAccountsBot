@@ -12,6 +12,7 @@ export default {
      * @param {String[]} args
      */
     run: async (client, message, args) => {
+			console.log(`DEBUG:embed`, discord);
             const embed = new discord.MessageEmbed()
             .setColor('#e4b400')
             .setTitle("Create a Freeside Account!")
