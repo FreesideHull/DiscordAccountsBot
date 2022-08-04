@@ -18,10 +18,11 @@ module.exports = {
             const row = new discord.MessageActionRow()
             .addComponents(
                 new discord.MessageButton()
+                .setCustomId('accountCreate')
                 .setLabel('Create an account')
                 .setStyle('PRIMARY')
             )
-            
+
         message.channel.send({ embeds: [embed], components: [row] })
     },
 };
