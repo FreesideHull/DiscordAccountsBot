@@ -3,5 +3,5 @@
 import log from '../../io/NamespacedLog.mjs'; const l = log("discord:debug");
 
 export default async function(client) {
-	client.on('debug', l.log.bind(l));
+	client.on('debug', l.debug.bind(l));
 }

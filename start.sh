@@ -3,7 +3,7 @@
 # Make sure the current directory is the location of this script to simplify matters
 cd "$(dirname "$(readlink -f "$0")")" || { echo "Error: Failed to cd to script  directory" >&2; exit 1; };
 
-ENV_VAR_FILE="${ENV_VAR_FILE:-./env_vars}";
+ENV_VAR_FILE="${ENV_VAR_FILE:-./env_vars.sh}";
 if [[ ! -r "${ENV_VAR_FILE}" ]]; then
 	echo "Error: The environment variables file at ${ENV_VAR_FILE} does not exist." >&2;
 	exit 2;
@@ -24,8 +24,6 @@ fi
 export DISCORD_TOKEN;
 export PREFIX;
 
-echo ">>> [wrapper] ARGS: ${ARGS}" >&2;
+echo ">>> [wrapper] ARGS: start $*" >&2;
 
-# Word splitting is intentional here
-#shellcheck disable=SC2086
-./index.mjs start ${ARGS};
+./src/index.mjs start "$@";

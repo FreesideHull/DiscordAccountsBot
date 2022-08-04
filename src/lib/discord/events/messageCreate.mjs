@@ -1,7 +1,5 @@
 "use strict";
 
-// Environment variable handling is done elsewhere --@sbrl
-//require("dotenv").config();
 // Unused? --@sbrl
 //import discord from 'discord.js';
 
