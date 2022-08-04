@@ -1,6 +1,6 @@
-const discord = require("discord.js");
+import discord from "discord.js";
 
-module.exports = {
+export default {
     name: "embed",
     aliases: [''],
     /**
