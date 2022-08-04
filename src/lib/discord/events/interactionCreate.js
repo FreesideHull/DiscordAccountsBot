@@ -25,16 +25,17 @@ client.on("interactionCreate", async (interaction) => {
     
     // Button Handling
     if (interaction.isButton()) {
-            if(interaction.customId == "codeOfConduct"){
-                if(interaction.member.roles.cache.has("973646380771979304"))
-                {
-                    interaction.reply({ content: 'You already have agreed to the code of conduct!', ephemeral: true})
-                } 
-                else
-                {
-                    interaction.member.roles.add("973646380771979304")
-                    await interaction.reply({ content: 'Thank you for agreeing to the code of conduct!\r\nYou can now access the rest of the server!', ephemeral: true});
-                }
+            if(interaction.customId == "accountCreate"){
+                const modal = new discord.Modal()
+                .setCustomId('modal-accountCreate')
+                .setTitle('Freeside Account Creation')
+            const studentname = new discord.TextInputComponent()                        
+                .setLabel("Student Email")
+                .setStyle("SHORT")
+                .setCustomId("studentemail")
+            const firstActionRow = new discord.MessageActionRow().addComponents(studentname);
+            modal.addComponents(firstActionRow);
+            await interaction.showModal(modal);   
             }
     }
 
@@ -42,27 +43,8 @@ client.on("interactionCreate", async (interaction) => {
     // Modal Handling
     if(interaction.isModalSubmit) {
         if(interaction.customId === 'modal-paidmember'){
-            const execchannel = client.channels.cache.get('981678376655921153')
-    
-            const embed = new discord.MessageEmbed()
-                .setTitle("New Paid Member Request")
-                .setColor('GREEN')
-                .addField('Discord Tag', `${ interaction.user} <- Click to add role.`)
-                .addField('Student Name', `${ interaction.fields.getTextInputValue("studentname")}`)
-                .addField('Student Number',`${ interaction.fields.getTextInputValue("studentnumber")}`)
-                .setDescription('https://hulluniunion.com/')
-            const row = new discord.MessageActionRow()
-            .addComponents(
-                new discord.MessageButton()
-                    .setCustomId('deletemessage')
-                    .setEmoji('')
-                    .setLabel('Delete Message')
-                    .setStyle('DANGER')
-            )
-            execchannel.send({embeds: [embed], components: [row] });
-            await interaction.deferReply({ ephemeral: true })
-            interaction.followUp({ content: 'Your request has been sent to execs!', ephemeral: true })
-    
+
+
         }  
     }
     

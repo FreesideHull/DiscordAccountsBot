@@ -13,7 +13,7 @@ module.exports = {
             const embed = new discord.MessageEmbed()
             .setColor('#e4b400')
             .setTitle("Create a Freeside Account!")
-            .setDescription(`Press the button below to get access to the paid member role.`)
+            .setDescription(`Press the button below to start the process to create a freeside account!`)
 
             const row = new discord.MessageActionRow()
             .addComponents(
