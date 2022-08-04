@@ -13,4 +13,10 @@ client.slashCommands = new Collection();
 // Initializing the project
 require("./handler")(client);
 
+client.on('ready', () => {
+    console.log('FS Bot is online')
+    client.user.setActivity(`Freeside Accounts`, {type:"WATCHING"})
+})
+
+
 client.login(process.env.DISCORD_TOKEN);
