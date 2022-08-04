@@ -12,7 +12,7 @@ export default function () {
 	client.commands = new Collection();
 	client.slashCommands = new Collection();
 
-	// Initializing the project
+	// Initialize the project
 	handler(client);
 
 	client.on('ready', () => {
