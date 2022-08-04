@@ -45,6 +45,13 @@ client.on("interactionCreate", async (interaction) => {
         if(interaction.customId === 'modal-accountCreate'){
             if(interaction.fields.getTextInputValue("studentemail").includes("@hull.ac.uk"))
             {
+                const username = interaction.fields.getTextInputValue("studentemail")
+                //// INSERT FANCY BLACK MAGIC HERE, EMAIL IS HELD AS `username`
+
+
+
+
+
                 await interaction.deferReply({ ephemeral: true })
                 interaction.followUp({ content: 'I have sent you a dm!', ephemeral: true })
                 client.users.cache.get(interaction.user.id).send('Test dm')
