@@ -7,7 +7,8 @@ This Discord bot manages accounts on the Freeside network, but may be useful in 
  - Create new user accounts, automatically assigning roles depending on the source Discord server
  - Assign and unassign roles
  - Reset passwords
- - Disable accounts and assign to an alumni role
+ - Create new accounts
+ - Disable accounts or manage permissions
 
 
 ## System Requirements
