@@ -11,16 +11,16 @@ export default function () {
 	// Global Variables
 	client.commands = new Collection();
 	client.slashCommands = new Collection();
-
+	
 	// Initialize the project
 	handler(client);
-
+	
 	client.on('ready', () => {
 		console.log('FS Bot is online')
 		client.user.setActivity(`Freeside Accounts`, { type: "WATCHING" })
 	})
-
-
+	
+	
 	client.login(process.env.DISCORD_TOKEN);
 	return client;
 }
