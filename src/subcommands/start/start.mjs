@@ -2,7 +2,7 @@
 
 import settings from '../../settings.mjs';
 
-import DiscordBot from '../../lib/discord/DiscordBot.mjs';
+import start_discord from '../../lib/discord/index.mjs';
 import HttpServer from '../../lib/http/HttpServer.mjs';
 
 export default async function() {
@@ -25,7 +25,5 @@ export default async function() {
 	// 3: Start the discord bot
 	///
 	
-	// TODO: Replace this example code as you see fit
-	const bot = new DiscordBot();
-	bot.start(); // This method does not exist yet
+	start_discord();
 }
