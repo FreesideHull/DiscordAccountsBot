@@ -1,11 +1,8 @@
 "use strict";
 
 import path from 'path';
-import { glob } from "glob";
-import { promisify } from "util";
+import { globby } from "globby";
 import { Client } from "discord.js";
-
-const globPromise = promisify(glob);
 
 // HACK: Make sure __dirname is defined when using es6 modules. I forget where I found this - a PR with a source URL would be great :D --@sbrl
 const __dirname = import.meta.url.slice(7, import.meta.url.lastIndexOf("/"));
@@ -16,7 +13,7 @@ const __dirname = import.meta.url.slice(7, import.meta.url.lastIndexOf("/"));
  */
 export default async function (client) {
 	// Commands
-	const commandFiles = await globPromise(path.resolve(__dirname, `../commands/**/*.mjs`));
+	const commandFiles = await globby(path.resolve(__dirname, `../commands/**/*.mjs`));
 	for(const value of commandFiles) {
 		const file = (await import(value)).default;
 		const splitted = value.split("/"); // I recommend using path.dirname() and path.dirname() here
@@ -29,13 +26,13 @@ export default async function (client) {
 	}
 
 	// Events
-	const eventFiles = await globPromise(path.resolve(__dirname, `../events/*.mjs`));
+	const eventFiles = await globby(path.resolve(__dirname, `../events/*.mjs`));
 	for(const filepath of eventFiles) {
 		(await import(filepath)).default(client);
 	}
 
 	// Slash Commands
-	const slashCommands = await globPromise(
+	const slashCommands = await globby(
 		path.resolve(__dirname, `../SlashCommands/*/*.js`)
 	);
 
