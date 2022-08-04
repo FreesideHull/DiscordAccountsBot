@@ -27,3 +27,4 @@ export PREFIX;
 echo ">>> [wrapper] ARGS: start $*" >&2;
 
 ./src/index.mjs start "$@";
+
