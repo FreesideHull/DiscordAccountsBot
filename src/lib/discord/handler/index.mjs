@@ -4,7 +4,7 @@ import path from 'path';
 import { globby } from "globby";
 import { Client } from "discord.js";
 
-import log from '../io/NamespacedLog.mjs'; const l = log("discord:handler");
+import log from '../../io/NamespacedLog.mjs'; const l = log("discord:handler");
 
 // HACK: Make sure __dirname is defined when using es6 modules. I forget where I found this - a PR with a source URL would be great :D --@sbrl
 const __dirname = import.meta.url.slice(7, import.meta.url.lastIndexOf("/"));
