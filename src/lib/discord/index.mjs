@@ -3,9 +3,9 @@
 import { Client, Collection } from "discord.js";
 import handler from './handler/index.mjs';
 
-// This will be done elsewhere
-//import dotenv from "dotenv";
-//dotenv.config();
+// This will be done elsewhere. TEMPORARILY uncommented.
+import dotenv from "dotenv";
+dotenv.config();
 
 export default function () {
 	const client = new Client({
