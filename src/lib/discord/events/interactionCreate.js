@@ -42,8 +42,18 @@ client.on("interactionCreate", async (interaction) => {
 
     // Modal Handling
     if(interaction.isModalSubmit) {
-        if(interaction.customId === 'modal-paidmember'){
-
+        if(interaction.customId === 'modal-accountCreate'){
+            if(interaction.fields.getTextInputValue("studentemail").content.toLowerCase( ).includes("hull.ac.uk"))
+            {
+                await interaction.deferReply({ ephemeral: true })
+                interaction.followUp({ content: 'That was not a valid student email, please try again.', ephemeral: true })
+            }
+            else
+            {
+                await interaction.deferReply({ ephemeral: true })
+                interaction.followUp({ content: 'I have sent you a dm!', ephemeral: true })
+                client.users.cache.get(interaction.user.id).send('Test dm')
+            }
 
         }  
     }
