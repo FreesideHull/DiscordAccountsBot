@@ -43,7 +43,7 @@ client.on("interactionCreate", async (interaction) => {
     // Modal Handling
     if(interaction.isModalSubmit) {
         if(interaction.customId === 'modal-accountCreate'){
-            if(interaction.fields.getTextInputValue("studentemail").content.toLowerCase( ).includes("hull.ac.uk"))
+            if(interaction.fields.getTextInputValue("studentemail").includes("hull.ac.uk"))
             {
                 await interaction.deferReply({ ephemeral: true })
                 interaction.followUp({ content: 'That was not a valid student email, please try again.', ephemeral: true })
