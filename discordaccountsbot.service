@@ -1,0 +1,23 @@
+[Unit]
+Description=Freeside Discord self-service account bot
+After=network.target
+
+# No more than 5 crashes in 12 hours
+#StartLimitIntervalSec=43200
+#StartLimitBurst=5
+
+[Service]
+Type=simple
+User=discordaccountsbot
+EnvironmentFile=-/etc/default/discordaccountsbot
+ExecStart=/absolute/path/to/src/index.mjs --verbose start
+Restart=always
+# Other Restart options: or always, on-abort, etc
+# Delay restarts by 60 seconds
+RestartSec=60
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=discordaccountsbot
+
+[Install]
+WantedBy=multi-user.target
