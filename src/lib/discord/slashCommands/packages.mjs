@@ -1,6 +1,6 @@
-import { Client, CommandInteraction, MessageEmbed } from "discord.js";
+import { Client, CommandInteraction} from "discord.js";
 
-module.exports = {
+export default {
     name: "packages",
     // This may be wrong  - Kieran
     description: "Gets the input for packages to install",
