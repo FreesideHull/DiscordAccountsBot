@@ -1,3 +1,5 @@
+"use strict";
+
 import { Client, CommandInteraction, MessageEmbed } from "discord.js";
 
 export default {
