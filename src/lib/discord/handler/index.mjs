@@ -38,7 +38,7 @@ export default async function (client) {
 
 	// Slash Commands
 	const slashCommands = await globby(
-		path.resolve(__dirname, `../SlashCommands/*/*.js`)
+		path.resolve(__dirname, `../slashCommands/*/*.mjs`)
 	);
 
 	const arrayOfSlashCommands = [];
