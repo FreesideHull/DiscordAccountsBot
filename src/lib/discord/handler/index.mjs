@@ -14,6 +14,7 @@ const __dirname = import.meta.url.slice(7, import.meta.url.lastIndexOf("/"));
  * @param {Client} client
  */
 export default async function (client) {
+
 	// Commands
 	const commandFiles = await globby(path.resolve(__dirname, `../commands/**/*.mjs`));
 	for(const value of commandFiles) {
@@ -37,18 +38,17 @@ export default async function (client) {
 	}
 
 	// Slash Commands
-	const slashCommands = await globby(path.resolve(__dirname, `../SlashCommands/*/*.mjs`));
+	const slashCommands = await globby(path.resolve(__dirname, `../SlashCommands/**/*.mjs`));
 	const arrayOfSlashCommands = [];
 
-	for(const filepath of slashCommands) {
-		l.log(`LOAD:slashcommand ${filepath}`);
-		const file = (await import(filepath)).default;
+	for(const value of slashCommands) {
+		l.log(`LOAD:slashcommand ${value}`);
+		const file = (await import(value)).default;
 		if (!file?.name) continue;
 		client.slashCommands.set(file.name, file);
 
 		if (["MESSAGE", "USER"].includes(file.type)) delete file.description;
 		arrayOfSlashCommands.push(file);
-		l.log(`REGISTER:slashcommand ${file}`)
 	};
 	
 	client.on("ready", async () => {
