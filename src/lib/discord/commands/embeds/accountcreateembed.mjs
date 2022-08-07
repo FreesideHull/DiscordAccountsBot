@@ -1,6 +1,6 @@
 "use strict";
 
-import discord from "discord.js";
+import { Client, MessageActionRow, MessageEmbed, MessageButton } from "discord.js";
 
 export default {
     name: "embed",
@@ -12,8 +12,8 @@ export default {
      * @param {String[]} args
      */
     run: async (client, message, args) => {
-			console.log(`DEBUG:embed`, discord);
-            const embed = new discord.MessageEmbed()
+			console.log(`DEBUG:embed`, MessageEmbed);
+            const embed = new MessageEmbed()
             .setColor('#e4b400')
             .setTitle("Create a Freeside Account!")
             .setDescription(`Press the button below to start the process to create a freeside account!`)
@@ -22,9 +22,9 @@ export default {
             The email you enter will be used to create your Freeside username.
             `)
 
-            const row = new discord.MessageActionRow()
+            const row = new MessageActionRow()
             .addComponents(
-                new discord.MessageButton()
+                new MessageButton()
                 .setCustomId('accountCreate')
                 .setLabel('Create an account')
                 .setStyle('PRIMARY')
