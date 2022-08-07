@@ -37,14 +37,12 @@ export default async function (client) {
 	}
 
 	// Slash Commands
-	const slashCommands = await globby(
-		path.resolve(__dirname, `../slashCommands/*/*.mjs`)
-	);
-
+	const slashCommands = await globby(path.resolve(__dirname, `../SlashCommands/*/*.mjs`));
 	const arrayOfSlashCommands = [];
-	for(const value of slashCommands) {
+
+	for(const filepath of slashCommands) {
 		l.log(`LOAD:slashcommand ${filepath}`);
-		const file = (await import(value)).default;
+		const file = (await import(filepath)).default;
 		if (!file?.name) continue;
 		client.slashCommands.set(file.name, file);
 
