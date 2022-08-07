@@ -50,6 +50,7 @@ export default async function (client) {
 
 		if (["MESSAGE", "USER"].includes(file.type)) delete file.description;
 		arrayOfSlashCommands.push(file);
+		l.log(`REGISTER:slashcommand ${file}`)
 	};
 	
 	client.on("ready", async () => {
