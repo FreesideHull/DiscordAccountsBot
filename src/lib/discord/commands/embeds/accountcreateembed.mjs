@@ -29,7 +29,7 @@ export default {
             .addComponents(
                 new MessageButton()
                     .setCustomId('accountCreate')
-                    .setLabel('Create an account')
+                    .setLabel('Create Account')
                     .setStyle('SUCCESS')
             )
 			.addComponents(
