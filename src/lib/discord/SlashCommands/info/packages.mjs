@@ -20,8 +20,9 @@ export default {
      */
     run: async (client, interaction, args) => {
         const packagesInputted = interaction.options.getString("packages")
+        const packagesarray = packagesInputted.split(',')
+        console.log(packagesarray)
 
-        
 
 
     },
