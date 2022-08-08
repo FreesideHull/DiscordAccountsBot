@@ -1,8 +1,5 @@
 "use strict";
 
-// Unused? --@sbrl
-// import discord from 'discord.js';
-
 export default function(client) {
 	client.on("messageCreate", async (message) => {
 		if (
