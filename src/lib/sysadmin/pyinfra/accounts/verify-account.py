@@ -5,11 +5,11 @@
 # chown xuser:xuser home directory
 
 # but do that through pyinfra rather than typical bash
-
+import os
 
 from pyinfra.operations import server, files
 
-username = "test" # replace this with however we get the username var!
+username = os.environ.get("PYINFRA_USERNAME")
 
 server.user(
     name="Validate user", # or create them if they somehow don't exist
