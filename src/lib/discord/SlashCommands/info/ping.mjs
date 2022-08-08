@@ -4,7 +4,7 @@ import { Client, CommandInteraction, MessageEmbed } from "discord.js";
 
 export default {
     name: "ping",
-    description: "returns ping of the freeside accounts bot bot",
+    description: "returns ping of the freeside accounts bot",
     type: 'CHAT_INPUT',
     /**
      *
