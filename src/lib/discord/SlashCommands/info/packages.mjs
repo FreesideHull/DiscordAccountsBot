@@ -9,7 +9,7 @@ export default {
         .setDescription('Install packages')
         .addStringOption((option) => option
             .setName('packages')
-            .setDescription("the packages you'd like to install, seperate with a comma")
+            .setDescription("the packages you'd like to install, seperate with a comma and space")
             .setRequired(true)
         ),
     /**
