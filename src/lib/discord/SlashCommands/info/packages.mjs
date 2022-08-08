@@ -1,12 +1,17 @@
 "use strict";
 
 import { Client, CommandInteraction} from "discord.js";
+import { SlashCommandBuilder } from '@discordjs/builders';
 
 export default {
-    name: "packages",
-    // This may be wrong  - Kieran
-    description: "Gets the input for packages to install",
-    type: 'CHAT_INPUT',
+    ...new SlashCommandBuilder()
+        .setName('packages')
+        .setDescription('Install packages')
+        .addStringOption((option) => option
+            .setName('packages')
+            .setDescription("the packages you'd like to install, seperate with a comma")
+            .setRequired(true)
+        ),
     /**
      *
      * @param {Client} client
@@ -14,6 +19,10 @@ export default {
      * @param {String[]} args
      */
     run: async (client, interaction, args) => {
-        interaction.reply("test")
+        const packagesInputted = interaction.options.getString("packages")
+
+        
+
+
     },
 };
