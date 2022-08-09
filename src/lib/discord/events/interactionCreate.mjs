@@ -47,6 +47,14 @@ export default function(client) {
 
 
 				}
+
+				if(interaction.customId == "linkAccount"){
+					// Do code for function for opening website that the user can link their discord
+
+					interaction.reply({ content: 'This will be the general link', ephemeral: true })
+
+
+				}
 				
 
 		}
