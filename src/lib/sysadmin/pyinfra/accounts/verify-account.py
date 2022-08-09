@@ -24,9 +24,13 @@ from python_freeipa import ClientMeta
 # make our own wrapper around the `ipa` command perhaps?
 
 
-
+# set Freeside's IPA server as the client to login to
 client = ClientMeta('ipa.freeside.co.uk')
-client.login("an-admin-username", "woah-super-secret-password")
+
+# grab login details through yet more environment variables
+client.login("an-admin-username", "woah-super-secret-password") 
+
+# create a user
 user = client.user_add('test3', 'John', 'Doe', 'John Doe', o_preferredlanguage='EN')
                     # it is unclear what this first option actually  is???
                     # how do we set their password??
@@ -34,7 +38,7 @@ user = client.user_add('test3', 'John', 'Doe', 'John Doe', o_preferredlanguage='
 sleep(10) # wait so that we can make sure the account is made before freeipa tries to verify it or we're gonna have a bad time
 
 server.user(
-    name="Validate user", # or create them if they somehow don't exist
+    name="Validate user", # or create them if they somehow don't exist, but they really should
     user=username,
     home="/home/"+username,
     _sudo=True,
