@@ -20,6 +20,9 @@ username = os.environ.get("PYINFRA_USERNAME") # grabs the username that is going
 
 from python_freeipa import ClientMeta
 
+# the python-freeipa client sucks now uhhh
+# make our own wrapper around the `ipa` command perhaps?
+
 
 
 client = ClientMeta('ipa.freeside.co.uk')
