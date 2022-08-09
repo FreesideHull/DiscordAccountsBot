@@ -39,6 +39,16 @@ export default function(client) {
 				modal.addComponents(firstActionRow);
 				await interaction.showModal(modal);   
 				}
+
+				if(interaction.customId == "resetPassword"){
+					// Do code for function for resetting password
+
+					interaction.reply({ content: 'This will be the general link', ephemeral: true })
+
+
+				}
+				
+
 		}
 		
 		
@@ -49,10 +59,6 @@ export default function(client) {
 				{
 					const username = interaction.fields.getTextInputValue("studentemail")
 					//// INSERT FANCY BLACK MAGIC HERE, EMAIL IS HELD AS `username`
-					
-					
-					
-					
 					
 					await interaction.deferReply({ ephemeral: true })
 					interaction.followUp({ content: 'I have sent you a dm!', ephemeral: true })
