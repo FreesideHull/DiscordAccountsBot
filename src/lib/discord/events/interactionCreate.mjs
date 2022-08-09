@@ -69,8 +69,7 @@ export default function(client) {
 					//// INSERT FANCY BLACK MAGIC HERE, EMAIL IS HELD AS `username`
 					
 					await interaction.deferReply({ ephemeral: true })
-					interaction.followUp({ content: 'I have sent you a dm!', ephemeral: true })
-					client.users.cache.get(interaction.user.id).send('Test dm')
+					interaction.followUp({ content: 'This will be the general link', ephemeral: true })
 				}
 				else
 				{
