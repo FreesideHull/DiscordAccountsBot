@@ -20,6 +20,7 @@
     "applause-cli": "^1.8.1",
     "discord.js": "^13.9.2",
     "globby": "^13.1.2",
+    "node-freeipa": "^2.4.0",
     "powahroot": "^1.2.6",
     "pretty-ms": "^8.0.0",
     "tweetnacl": "^1.0.3"
