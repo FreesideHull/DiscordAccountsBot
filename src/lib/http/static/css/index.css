@@ -1,0 +1,44 @@
+:root {
+	--background: white;
+	--text: #525252;
+	--bright: #fe6431;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--background: #525252;
+		--text: white;
+	}
+}
+
+
+
+html, body { font-size: 100%; }
+body {
+	font-family: sans-serif;
+	
+	background: var(--background);
+	color: var(--text);
+	
+	display: grid;
+	grid-template-columns: 10% 1fr 10%;
+	grid-template-rows: auto 1fr auto;
+	grid-template-areas: "header header header"
+		". content ."
+		"footer footer footer";
+}
+
+header {
+	grid-area: header;
+}
+
+main {
+	grid-area: content;
+}
+
+footer {
+	grid-area: footer;
+}
+
+
+h1 > img { display: block; }
