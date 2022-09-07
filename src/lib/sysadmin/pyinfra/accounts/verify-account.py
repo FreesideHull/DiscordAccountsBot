@@ -18,30 +18,11 @@ from pyinfra.operations import server, files # modules pyinfra needs
 
 username = os.environ.get("PYINFRA_USERNAME") # grabs the username that is going to be validated
 
-from python_freeipa import ClientMeta
-
-# the python-freeipa client sucks now uhhh
-# make our own wrapper around the `ipa` command perhaps?
-
-
-# set Freeside's IPA server as the client to login to
-client = ClientMeta('ipa.freeside.co.uk')
-
-# grab login details through yet more environment variables
-client.login("an-admin-username", "woah-super-secret-password") 
-
-# create a user
-user = client.user_add('test3', 'John', 'Doe', 'John Doe', o_preferredlanguage='EN')
-                    # it is unclear what this first option actually  is???
-                    # how do we set their password??
-
-sleep(10) # wait so that we can make sure the account is made before freeipa tries to verify it or we're gonna have a bad time
 
 server.user(
     name="Validate user", # or create them if they somehow don't exist, but they really should
     user=username,
     home="/home/"+username,
-    _sudo=True,
 )
 
 files.directory(
@@ -49,7 +30,5 @@ files.directory(
     path="/home/"+username,
     user=username,
     group=username,
-    _sudo=True,
 )
 
-# sudo is needed for both commands, please use the sudo passwoed of the account you are connecting as

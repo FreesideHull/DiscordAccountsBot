@@ -8,5 +8,4 @@ dnf.packages( # installs/updates the chosen packages
     name="Install selected packages",
     packages=pkgs,
     latest=True,
-    _sudo=True,
 )
